@@ -13,14 +13,16 @@
     nav a { color: white; text-decoration: none; font-size: 14px; }
 
     .hero { position: relative; }
-    .hero img { width: 1200px; height: 400px; object-fit: cover; display: block; }
+    /* Changed hero image*/
+    .hero img { width: 100%; height: auto; object-fit: cover; display: block; }
     .hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; }
     .hero-text h2 { font-size: 2.5rem; margin: 0 0 12px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
     .hero-text p  { font-size: 1.1rem; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
 
     .menu-section { padding: 40px; }
     .menu-section h2 { margin-bottom: 24px; font-size: 1.4rem; }
-    .card-grid { display: grid; grid-template-columns: repeat(4, 250px); gap: 24px; }
+    /* Changed card grid */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
 
     .card { border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
     .card img { width: 100%; height: 160px; object-fit: cover; display: block; }
@@ -31,6 +33,7 @@
     .card-body button { width: 100%; padding: 8px; background: #e63946; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; margin-top: 10px; }
 
     .contact { padding: 40px; background: #f9f9f9; }
+    /* Changed contact inner */
     .contact-inner { width: 800px; margin: 0 auto; }
     .contact h2 { margin-bottom: 20px; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -40,6 +43,45 @@
     footer { background: #1d1d1d; color: #ccc; padding: 24px 40px; font-size: 13px; display: flex; justify-content: space-between; }
 
     .fine-print { font-size: 11px; color: #999; margin-top: 4px; }
+    @media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-inner {
+        width: 100%;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
   </style>
 </head>
 <body>
